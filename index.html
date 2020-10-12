@@ -104,7 +104,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1MiqwGe_7m6B0xFQfaS3GGRO8CmGm5xlXPICDPEeGHyo/gviz/tq?tqx=out:csv&sheet=Sheet1',
+        url: 'https://docs.google.com/spreadsheets/d/1Qlj_jK6wVTafxjdAuautz0Zsw3x7H0MXxQcNHEPhzG8/gviz/tq?tqx=out:csv&sheet=CLUI_CoastRealty_Sites',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -139,6 +139,7 @@
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
 
+              var image = '<img src="' + e.features[0].properties.imagelink + '" width = "200">'
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
@@ -155,7 +156,8 @@
 
               new mapboxgl.Popup()
                 .setLngLat(coordinates)
-                .setHTML(description)
+                .setHTML(image)
+                //.setHTML(description)
                 .addTo(map);
             });
 

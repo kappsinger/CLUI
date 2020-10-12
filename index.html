@@ -26,7 +26,7 @@
     /* Popup styling */
 
     .mapboxgl-popup {
-      padding-bottom: 5px;
+      padding: 5px;
       width: 400px;
     }
 
@@ -37,7 +37,7 @@
     .mapboxgl-popup-content {
       font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
       padding: 0;
-      width: 400px;
+      width: 404px;
     }
 
     .mapboxgl-popup-content-wrapper {
@@ -76,8 +76,7 @@
 
     .thumbnail {
       text-align: center;
-      width: 390px;
-      margin: 10px;
+      width: 400px;
     }
   </style>
 </head>
@@ -146,7 +145,7 @@
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
 
-              var image_description = '<img class="thumbnail" src="' + e.features[0].properties.imagelink + '" width="390"> <br> <h4>' + e.features[0].properties.address + '</h4>'
+              var image_description = '<img class="thumbnail" src="' + e.features[0].properties.imagelink + '"> <br> <h4>' + e.features[0].properties.address + '</h4>'
 
               //var image = '<img class="thumbnail" src="' + e.features[0].properties.imagelink + '" width="390">'
               //set popup text

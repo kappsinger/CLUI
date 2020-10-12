@@ -95,8 +95,8 @@
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/light-v10', //stylesheet location
-      center: [-122.411464, 37.7852299], // starting position
-      zoom: 10,// starting zoom
+      center: [-118.007, 33.978], // starting position
+      zoom: 8.24,// starting zoom
       transformRequest: transformRequest
     });
 
@@ -180,7 +180,8 @@
       };
     });
 
-
+map.addControl(new mapboxgl.NavigationControl());
+map.getCanvas().style.cursor = 'default';
 
 
   </script>

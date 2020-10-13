@@ -114,6 +114,7 @@
         url: 'https://docs.google.com/spreadsheets/d/1Qlj_jK6wVTafxjdAuautz0Zsw3x7H0MXxQcNHEPhzG8/gviz/tq?tqx=out:csv&sheet=CLUI_CoastRealty_Sites',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
+        cluster: true
       });
 
 
